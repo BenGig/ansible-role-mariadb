@@ -19,7 +19,7 @@ mariadb_can_restart: true
 
 # Whether global conf file should be updated on every run
 mariadb_overwrite_global_config_file: true
-mariadb_datadir_permissions: "0755"
+mariadb_data_dir_permissions: "0755"
 
 # MariaDB configuration file
 # Basic settings

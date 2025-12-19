@@ -15,7 +15,7 @@
     state: directory
     owner: "{{ mariadb_user }}"
     group: "{{ mariadb_group }}"
-    mode: "{{ mariadb_datadir_permissions }}"
+    mode: "{{ mariadb_data_dir_permissions }}"
 
 - name: Handle DB initialisation for an empty custom directory
   ansible.builtin.command:
