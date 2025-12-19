@@ -20,7 +20,7 @@
 - name: Handle DB initialisation for an empty custom directory
   ansible.builtin.command:
     cmd: /usr/bin/mariadb-install-db --rpm --cross-bootstrap --user=mysql --disable-log-bin --skip-test-db
-    creates: mysql
+    creates: "{{ mariadb_data_dir }}/mysql"
 
 - name: Ensure MariaDB is started and enabled on boot
   ansible.builtin.service:
