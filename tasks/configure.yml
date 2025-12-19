@@ -9,6 +9,14 @@
     force: "{{ mariadb_overwrite_global_config_file }}"
   notify: Restart mariadb
 
+- name: Ensure data directory is present and accessible
+  ansible.builtin.file:
+    path: "{{ mariadb_data_dir }}"
+    state: directory
+    owner: "{{ mariadb_user }}"
+    group: "{{ mariadb_group }}"
+    mode: "{{ mariadb_datadir_permissions }}"
+
 - name: Ensure MariaDB is started and enabled on boot
   ansible.builtin.service:
     name: mariadb
